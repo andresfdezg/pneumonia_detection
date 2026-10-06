@@ -1,0 +1,25 @@
+data/stage_2_train_images/
+data/stage_2_test_images/
+models/
+drafts/
+pneumonia_env/
+yolo_data/
+pneumonia_env/
+
+# Pesos de YOLO (preentrenados y entrenados) - se re-descargan solos
+*.pt
+
+# Caches de Python y Jupyter
+__pycache__/
+.ipynb_checkpoints/
+
+# Personal notes, not for public repo
+analysis/notas_pneu.txt
+analysis/prompt.txt
+
+# Ultralytics val/predict outputs
+runs/
+
+# Competition data and derived files (Kaggle rules: no redistribution)
+data/
+analysis/*.csv

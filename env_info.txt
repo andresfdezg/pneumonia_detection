@@ -1,0 +1,27 @@
+% Python version: 3.12 (notebooks were developed with 3.12.8). Do not use 3.13+/3.14 for this env.
+
+% to create the environment: py -3.12 -m venv pneumonia_env
+% to activate the environment: pneumonia_env\Scripts\activate
+% to deactivate the environment: deactivate
+
+% 1) install PyTorch with CUDA FIRST (otherwise ultralytics pulls the CPU-only build):
+%    pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
+% 2) install the rest of the requirements:
+%    pip install -r requirements.txt
+% 3) check that the GPU is visible:
+%    python -c "import torch; print(torch.__version__, torch.cuda.is_available())"
+
+% Libraries used by the notebooks:
+%   00_overview: pydicom, numpy, pandas, matplotlib (pylab)
+%   01_eda:      + seaborn, tqdm
+%   02_modeling: + torch, ultralytics (YOLOv8), opencv-python (cv2)
+%   ipykernel is needed to run the notebooks in VS Code / Jupyter
+
+% Tested versions (2026-10-02): torch 2.11.0+cu128, ultralytics 8.4.171, opencv-python 5.0.0,
+%   pydicom 3.0.2, numpy 2.5.2, pandas 3.0.6, matplotlib 3.11.2, seaborn 0.13.2, tqdm 4.70.1
+
+% Windows 11 note: if importing torch fails with "WinError 4551 ... Control de aplicaciones bloqueó este archivo",
+%   Smart App Control is blocking PyTorch's unsigned DLLs. Turn it off in
+%   Seguridad de Windows > Control de aplicaciones y navegador > Control inteligente de aplicaciones.
+
+% data/yolo_data is not tracked in git: regenerate it with 02_modeling.ipynb (cells 3, 5, 7-12, with bool_convert = True).
